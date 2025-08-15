@@ -6,4 +6,4 @@ scikit-learn
 matplotlib
 seaborn
 plotly
-kaggle
+kagglehub
