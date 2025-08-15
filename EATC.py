@@ -151,8 +151,19 @@ def load_data():
     for roots, dirs, filenames in os.walk(path):
         for filename in filenames:
             file_paths.append(os.path.join(roots, filename))
-    
-    return file_paths
+            
+    files_to_remove = [
+    'phishing_email.csv',  # Combined file
+    ]
+
+    filtered_path = []
+    for file_path in file_paths:
+        filename = os.path.basename(file_path) # Get just the filename
+        if filename not in files_to_remove:
+            filtered_path.append(file_path)
+        
+        return filtered_path
+
 
 # Load Data
 file_paths = load_data()
